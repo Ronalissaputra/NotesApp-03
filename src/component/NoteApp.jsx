@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import NoteNav from "./NoteNav";
 import HomePage from "../pages/HomePage";
 import AddPage from "../pages/AddPage";
+import DetailPage from "../pages/DetailPage";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage";
 import { getUserLogged, putAccessToken } from "../Utils/api";
@@ -106,6 +107,7 @@ class NoteApp extends React.Component {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/add" element={<AddPage />} />
+              <Route path="/Detail/:id" element={<DetailPage />} />
             </Routes>
           </main>
         </div>

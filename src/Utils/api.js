@@ -113,6 +113,18 @@ async function deleteNotes(id) {
   return { error: false };
 }
 
+async function detailNotes(id) {
+  const response = await fetchWithToken(`${BASE_URL}/notes/${id}`);
+  const responseJson = await response.json();
+
+  if (responseJson.status !== "success") {
+    alert(responseJson.message);
+    return { error: true, data: [] };
+  }
+
+  return { error: false, data: responseJson.data };
+}
+
 export {
   getAccessToken,
   putAccessToken,
@@ -122,4 +134,5 @@ export {
   addNotes,
   getNotes,
   deleteNotes,
+  detailNotes,
 };

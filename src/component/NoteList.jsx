@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import NoteItem from "./NoteItem";
 
-function NoteList({ Notes, Hapus }) {
+function NoteList({ Notes, Hapus, Detail }) {
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2">
       {Notes.map((note) => (
